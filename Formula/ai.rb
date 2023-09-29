@@ -5,13 +5,13 @@
 class Ai < Formula
   desc ""
   homepage "https://github.com/joern1811/ai"
-  version "0.1.1"
+  version "0.1.2"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/joern1811/ai/releases/download/v0.1.1/ai_Darwin_x86_64.tar.gz", using: CurlDownloadStrategy
-      sha256 "1e1fa6b8e96c4db0ee0ef0515f5ea23e0b45575fb1cfa949b6fa1ff7a84cbfba"
+      url "https://github.com/joern1811/ai/releases/download/v0.1.2/ai_Darwin_x86_64.tar.gz", using: CurlDownloadStrategy
+      sha256 "6507ad18278de0d9ca370b692af2fe2cc2b3fe9f7bb47d7b44334ef1094b7d85"
 
       def install
         bin.install "ai"
@@ -21,8 +21,8 @@ class Ai < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/joern1811/ai/releases/download/v0.1.1/ai_Darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "970600136ddda20c3239c127a3709cd63d4a861e60879819c839e01e29b622cc"
+      url "https://github.com/joern1811/ai/releases/download/v0.1.2/ai_Darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "334ffbeff6950aee2dbce2c0cda58e0585f31f203fda68fb0e65e104da339210"
 
       def install
         bin.install "ai"
@@ -35,8 +35,8 @@ class Ai < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/joern1811/ai/releases/download/v0.1.1/ai_Linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "b9b5f3718e5f276977a4eaef2be5c0419187b021abb13352d15bb15b74856823"
+      url "https://github.com/joern1811/ai/releases/download/v0.1.2/ai_Linux_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "87d1c2ba48570ec664b3d8fba103fa2f62fed9fbad4d39c21002fb1625746f0d"
 
       def install
         bin.install "ai"
@@ -46,8 +46,8 @@ class Ai < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/joern1811/ai/releases/download/v0.1.1/ai_Linux_x86_64.tar.gz", using: CurlDownloadStrategy
-      sha256 "3b7a8e5975300688e376c910eee10492f91fe17370364b7571e18f608493ea36"
+      url "https://github.com/joern1811/ai/releases/download/v0.1.2/ai_Linux_x86_64.tar.gz", using: CurlDownloadStrategy
+      sha256 "d2adf6a57f73d593dcc349b3a7905447be9044f27d177889b967462589250d81"
 
       def install
         bin.install "ai"
