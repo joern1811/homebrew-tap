@@ -5,13 +5,13 @@
 class Ai < Formula
   desc ""
   homepage "https://github.com/joern1811/ai"
-  version "0.1.2"
+  version "0.3.0"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/joern1811/ai/releases/download/v0.1.2/ai_Darwin_x86_64.tar.gz", using: CurlDownloadStrategy
-      sha256 "6507ad18278de0d9ca370b692af2fe2cc2b3fe9f7bb47d7b44334ef1094b7d85"
+    on_intel do
+      url "https://github.com/joern1811/ai/releases/download/v0.3.0/ai_Darwin_x86_64.tar.gz"
+      sha256 "af5ae89210c2eb18c37850446b8f61e6e55dd1a05658579562104e2fd479aa84"
 
       def install
         bin.install "ai"
@@ -20,9 +20,9 @@ class Ai < Formula
         fish_completion.install "completions/ai.fish"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/joern1811/ai/releases/download/v0.1.2/ai_Darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "334ffbeff6950aee2dbce2c0cda58e0585f31f203fda68fb0e65e104da339210"
+    on_arm do
+      url "https://github.com/joern1811/ai/releases/download/v0.3.0/ai_Darwin_arm64.tar.gz"
+      sha256 "8b8c924e43e2fabdc2804230621e32e46bf6f6ebff2188cb3b5ec7fbf144e5bf"
 
       def install
         bin.install "ai"
@@ -34,26 +34,30 @@ class Ai < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/joern1811/ai/releases/download/v0.1.2/ai_Linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "87d1c2ba48570ec664b3d8fba103fa2f62fed9fbad4d39c21002fb1625746f0d"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/joern1811/ai/releases/download/v0.3.0/ai_Linux_x86_64.tar.gz"
+        sha256 "2297e3605b00d915242edccb542d3f88d1e455e8df97b8b4c5548a327785a137"
 
-      def install
-        bin.install "ai"
-        bash_completion.install "completions/ai.bash" => "ai"
-        zsh_completion.install "completions/ai.zsh" => "_ai"
-        fish_completion.install "completions/ai.fish"
+        def install
+          bin.install "ai"
+          bash_completion.install "completions/ai.bash" => "ai"
+          zsh_completion.install "completions/ai.zsh" => "_ai"
+          fish_completion.install "completions/ai.fish"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/joern1811/ai/releases/download/v0.1.2/ai_Linux_x86_64.tar.gz", using: CurlDownloadStrategy
-      sha256 "d2adf6a57f73d593dcc349b3a7905447be9044f27d177889b967462589250d81"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/joern1811/ai/releases/download/v0.3.0/ai_Linux_arm64.tar.gz"
+        sha256 "63950af6f35b60027195c89ddda23d91b64fc81a02a63f0762e90c0f3c1fe599"
 
-      def install
-        bin.install "ai"
-        bash_completion.install "completions/ai.bash" => "ai"
-        zsh_completion.install "completions/ai.zsh" => "_ai"
-        fish_completion.install "completions/ai.fish"
+        def install
+          bin.install "ai"
+          bash_completion.install "completions/ai.bash" => "ai"
+          zsh_completion.install "completions/ai.zsh" => "_ai"
+          fish_completion.install "completions/ai.fish"
+        end
       end
     end
   end
