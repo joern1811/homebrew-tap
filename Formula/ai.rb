@@ -5,13 +5,13 @@
 class Ai < Formula
   desc ""
   homepage "https://github.com/joern1811/ai"
-  version "0.4.0"
+  version "0.4.1"
   license "Apache-2.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/joern1811/ai/releases/download/v0.4.0/ai_Darwin_x86_64.tar.gz"
-      sha256 "f7dbfe63667131c3db5fe12f58ab0f7fb965d2370c3054e38674664029173a73"
+      url "https://github.com/joern1811/ai/releases/download/v0.4.1/ai_Darwin_x86_64.tar.gz"
+      sha256 "8ef85c180bb8c77cda78eca28a5d0f9768e120c3898f27354ab008e480145c4e"
 
       def install
         bin.install "ai"
@@ -21,8 +21,8 @@ class Ai < Formula
       end
     end
     on_arm do
-      url "https://github.com/joern1811/ai/releases/download/v0.4.0/ai_Darwin_arm64.tar.gz"
-      sha256 "46f191aa368f81cd49f1d66d90328a9452e00c22332ca68a5ced7fef51b37edb"
+      url "https://github.com/joern1811/ai/releases/download/v0.4.1/ai_Darwin_arm64.tar.gz"
+      sha256 "0f33fc7f6730d2c8191e4b71ed3ca854cdc2db6c2907ddc90e942ca67334af49"
 
       def install
         bin.install "ai"
@@ -36,8 +36,8 @@ class Ai < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/joern1811/ai/releases/download/v0.4.0/ai_Linux_x86_64.tar.gz"
-        sha256 "8eddf003cf89ae4031e3cb16554e50c398cb7027c1e5d5189693e9bdf71be783"
+        url "https://github.com/joern1811/ai/releases/download/v0.4.1/ai_Linux_x86_64.tar.gz"
+        sha256 "2b5e19146202ccee959a10aa4878a1754aa129c88d6469bc551e9cdee3c505c9"
 
         def install
           bin.install "ai"
@@ -49,8 +49,8 @@ class Ai < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/joern1811/ai/releases/download/v0.4.0/ai_Linux_arm64.tar.gz"
-        sha256 "7e36e0067b5ff5c85f087058eac3152f11c20705ed619667f17a3337f356bd5f"
+        url "https://github.com/joern1811/ai/releases/download/v0.4.1/ai_Linux_arm64.tar.gz"
+        sha256 "561087dd1b3563a262e2d9c7b0e08f2bd8262beb6335775de381440aaf8931c2"
 
         def install
           bin.install "ai"
