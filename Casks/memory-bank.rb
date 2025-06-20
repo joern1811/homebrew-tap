@@ -2,7 +2,7 @@
 cask "memory-bank" do
   desc "Semantic memory management system for Claude Code using hexagonal architecture"
   homepage "https://github.com/joern1811/memory-bank"
-  version "1.12.0"
+  version "1.12.3"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,24 +12,53 @@ cask "memory-bank" do
 
   on_macos do
     on_intel do
-      url "https://github.com/joern1811/memory-bank/releases/download/v1.12.0/memory-bank_1.12.0_darwin_amd64.tar.gz"
-      sha256 "393696aa64a8bfb4b27bf08afd141c152d8de5b01d5ae40319ce3563779d5adb"
+      url "https://github.com/joern1811/memory-bank/releases/download/v1.12.3/memory-bank_1.12.3_darwin_amd64.tar.gz"
+      sha256 "caddc298c6162efefb99941133effe6eb2b5f72e971f7a44c36c326a8718e545"
     end
     on_arm do
-      url "https://github.com/joern1811/memory-bank/releases/download/v1.12.0/memory-bank_1.12.0_darwin_arm64.tar.gz"
-      sha256 "9d87cb77d96c00643621c7f2ba65253b836f8c312416d9a2f61f88a2ef4c0b26"
+      url "https://github.com/joern1811/memory-bank/releases/download/v1.12.3/memory-bank_1.12.3_darwin_arm64.tar.gz"
+      sha256 "bb15e7fa6fec0f36a272e69e2beae7d5af1ec05ee0d58efac482a8d506af9b58"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/joern1811/memory-bank/releases/download/v1.12.0/memory-bank_1.12.0_linux_amd64.tar.gz"
-      sha256 "a97ed6012a65c352ea0f49b233075a3612a2f763e4820c125888fbfbd8e47e1b"
+      url "https://github.com/joern1811/memory-bank/releases/download/v1.12.3/memory-bank_1.12.3_linux_amd64.tar.gz"
+      sha256 "51002dab6e35b6312758b77b4356fcb28617db92eb72b23b456a056aa4eaa30a"
     end
     on_arm do
-      url "https://github.com/joern1811/memory-bank/releases/download/v1.12.0/memory-bank_1.12.0_linux_arm64.tar.gz"
-      sha256 "222356cdfb1f9748c14f9a61378ab79df1134d97cbdc45759bd1e30a4befb192"
+      url "https://github.com/joern1811/memory-bank/releases/download/v1.12.3/memory-bank_1.12.3_linux_arm64.tar.gz"
+      sha256 "e8f121b66b631d2740060bb85eaa4d25bdbc17c2e0d8488caaf08ec939c88eb4"
     end
+  end
+
+  postflight do
+    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/memory-bank"]
+    system "#{staged_path}/memory-bank completion bash > #{HOMEBREW_PREFIX}/etc/bash_completion.d/memory-bank"
+    system "#{staged_path}/memory-bank completion zsh > #{HOMEBREW_PREFIX}/share/zsh/site-functions/_memory-bank"
+    system "#{staged_path}/memory-bank completion fish > #{HOMEBREW_PREFIX}/share/fish/vendor_completions.d/memory-bank.fish"
+  end
+
+  caveats do
+    "Memory Bank works out-of-the-box with mock providers, but for enhanced performance, "
+    "consider installing these optional services:"
+    ""
+    "For local embedding generation:"
+    "  brew install ollama"
+    "  ollama pull nomic-embed-text"
+    ""
+    "For vector search performance:"
+    "  # Option 1: Python package"
+    "  pip install chromadb"
+    ""
+    "  # Option 2: uvx (no installation needed)"
+    "  uvx --from "chromadb[server]" chroma run --host localhost --port 8000"
+    ""
+    "  # Option 3: Docker"
+    "  docker run -p 8000:8000 chromadb/chroma"
+    ""
+    "Start Memory Bank MCP server:"
+    "  memory-bank"
   end
 
   # No zap stanza required
