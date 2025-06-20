@@ -2,7 +2,7 @@
 cask "memory-bank" do
   desc "Semantic memory management system for Claude Code using hexagonal architecture"
   homepage "https://github.com/joern1811/memory-bank"
-  version "1.12.3"
+  version "1.12.4"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,23 +12,23 @@ cask "memory-bank" do
 
   on_macos do
     on_intel do
-      url "https://github.com/joern1811/memory-bank/releases/download/v1.12.3/memory-bank_1.12.3_darwin_amd64.tar.gz"
-      sha256 "caddc298c6162efefb99941133effe6eb2b5f72e971f7a44c36c326a8718e545"
+      url "https://github.com/joern1811/memory-bank/releases/download/v1.12.4/memory-bank_1.12.4_darwin_amd64.tar.gz"
+      sha256 "e18f04a35aad3582609363580dfe85264a932ddeafa769bc8b09a2e94d122f23"
     end
     on_arm do
-      url "https://github.com/joern1811/memory-bank/releases/download/v1.12.3/memory-bank_1.12.3_darwin_arm64.tar.gz"
-      sha256 "bb15e7fa6fec0f36a272e69e2beae7d5af1ec05ee0d58efac482a8d506af9b58"
+      url "https://github.com/joern1811/memory-bank/releases/download/v1.12.4/memory-bank_1.12.4_darwin_arm64.tar.gz"
+      sha256 "934354bdef290f5f7ce5d4904a2989dea9505bb9ee20c62368aff9d8622946d0"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/joern1811/memory-bank/releases/download/v1.12.3/memory-bank_1.12.3_linux_amd64.tar.gz"
-      sha256 "51002dab6e35b6312758b77b4356fcb28617db92eb72b23b456a056aa4eaa30a"
+      url "https://github.com/joern1811/memory-bank/releases/download/v1.12.4/memory-bank_1.12.4_linux_amd64.tar.gz"
+      sha256 "873f3ed02d5fd879851fac5cc1adb5dba53556941654cc74b6b372a967b8a802"
     end
     on_arm do
-      url "https://github.com/joern1811/memory-bank/releases/download/v1.12.3/memory-bank_1.12.3_linux_arm64.tar.gz"
-      sha256 "e8f121b66b631d2740060bb85eaa4d25bdbc17c2e0d8488caaf08ec939c88eb4"
+      url "https://github.com/joern1811/memory-bank/releases/download/v1.12.4/memory-bank_1.12.4_linux_arm64.tar.gz"
+      sha256 "5c6ef9a168ce89b6bea68d82b3db2cdfcb0b27ca1804d98a18aa0f91bc98035b"
     end
   end
 
@@ -52,7 +52,7 @@ cask "memory-bank" do
     "  pip install chromadb"
     ""
     "  # Option 2: uvx (no installation needed)"
-    "  uvx --from "chromadb[server]" chroma run --host localhost --port 8000"
+    "  uvx --from 'chromadb[server]' chroma run --host localhost --port 8000"
     ""
     "  # Option 3: Docker"
     "  docker run -p 8000:8000 chromadb/chroma"
