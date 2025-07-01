@@ -2,7 +2,7 @@
 cask "memory-bank" do
   desc "Semantic memory management system for Claude Code using hexagonal architecture"
   homepage "https://github.com/joern1811/memory-bank"
-  version "1.13.1"
+  version "1.14.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,23 +12,23 @@ cask "memory-bank" do
 
   on_macos do
     on_intel do
-      url "https://github.com/joern1811/memory-bank/releases/download/v1.13.1/memory-bank_1.13.1_darwin_amd64.tar.gz"
-      sha256 "37ccb0b7f7212ef1cbfa5c1c44e979dfc6c7c8cdcc3853a7d7b7884e4640e9ea"
+      url "https://github.com/joern1811/memory-bank/releases/download/v1.14.0/memory-bank_1.14.0_darwin_amd64.tar.gz"
+      sha256 "3f5809fc44c89e9bb3aef82daa48fc73247a4dcb12071dfb691ce80e9d47fd31"
     end
     on_arm do
-      url "https://github.com/joern1811/memory-bank/releases/download/v1.13.1/memory-bank_1.13.1_darwin_arm64.tar.gz"
-      sha256 "9bfa72923d855718e97e0a728c1c2ce8a9f2a930c1a6960a1f8129e920a95cf0"
+      url "https://github.com/joern1811/memory-bank/releases/download/v1.14.0/memory-bank_1.14.0_darwin_arm64.tar.gz"
+      sha256 "4eb079ff86fd69c41c287fee891dff3ec0fedc9add87c7cf2aabca09a2021862"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/joern1811/memory-bank/releases/download/v1.13.1/memory-bank_1.13.1_linux_amd64.tar.gz"
-      sha256 "a45819ee0771ee0d42641f919230f9621cc9a54e69fb72152bdafa2203a89578"
+      url "https://github.com/joern1811/memory-bank/releases/download/v1.14.0/memory-bank_1.14.0_linux_amd64.tar.gz"
+      sha256 "9fe550a29506366d268f426953cbbacf45dbd23512370678a83690bb0945bafc"
     end
     on_arm do
-      url "https://github.com/joern1811/memory-bank/releases/download/v1.13.1/memory-bank_1.13.1_linux_arm64.tar.gz"
-      sha256 "03fb0420ec6e48c4cc18312f2adcf21982f88d3f33c0f03763db8c1363934e5f"
+      url "https://github.com/joern1811/memory-bank/releases/download/v1.14.0/memory-bank_1.14.0_linux_arm64.tar.gz"
+      sha256 "f5706278626a8e910953e4feb513b1ede5ce28fb08fc69d3c3559447b2ab677a"
     end
   end
 
