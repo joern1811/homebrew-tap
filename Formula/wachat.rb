@@ -5,13 +5,13 @@
 class Wachat < Formula
   desc "Convert WhatsApp chat exports to readable text with voice message transcription."
   homepage "https://github.com/joern1811/wachat"
-  version "1.0.0"
+  version "1.1.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/joern1811/wachat/releases/download/v1.0.0/wachat_Darwin_x86_64.tar.gz"
-      sha256 "ce61cc172aa15e7239a496060f8b5ab6a9958d7010817fb5bfaf8ea7068871bc"
+      url "https://github.com/joern1811/wachat/releases/download/v1.1.0/wachat_Darwin_x86_64.tar.gz"
+      sha256 "3bfde58bed94c720914112c9cadb3f73c9098c43d140a106c98378af2e5d4fe7"
 
       define_method(:install) do
         bin.install "wachat"
@@ -21,8 +21,8 @@ class Wachat < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/joern1811/wachat/releases/download/v1.0.0/wachat_Darwin_arm64.tar.gz"
-      sha256 "0bc747968b6d7c11401ed1eac1f412ab73b197a181c5fe1ff13d757ec0d05e38"
+      url "https://github.com/joern1811/wachat/releases/download/v1.1.0/wachat_Darwin_arm64.tar.gz"
+      sha256 "9c5055d82c3bb23274e3a726f4b904a092e96b9bf617b0b6d87a2a1ad98c847a"
 
       define_method(:install) do
         bin.install "wachat"
@@ -35,8 +35,8 @@ class Wachat < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/joern1811/wachat/releases/download/v1.0.0/wachat_Linux_x86_64.tar.gz"
-      sha256 "30e89e5d931024e45fa5aaf179b28eb4b56be22e7c146e0dfa6ed2f10d6ef3b2"
+      url "https://github.com/joern1811/wachat/releases/download/v1.1.0/wachat_Linux_x86_64.tar.gz"
+      sha256 "34a41d13f77f79242eeacdafa0648c7269715c4083eb0cc0716cffea59f14e54"
       define_method(:install) do
         bin.install "wachat"
         bash_completion.install "completions/wachat.bash" => "wachat"
@@ -45,8 +45,8 @@ class Wachat < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/joern1811/wachat/releases/download/v1.0.0/wachat_Linux_arm64.tar.gz"
-      sha256 "6f9f0dfc6e08e3d271ff71cd6f75e734346a96b264c3c8e3e366ad1c1e9e760f"
+      url "https://github.com/joern1811/wachat/releases/download/v1.1.0/wachat_Linux_arm64.tar.gz"
+      sha256 "022fb56756886a25f3570d9e6d04d60348c6a7382e8d601535cd4a88eb657f92"
       define_method(:install) do
         bin.install "wachat"
         bash_completion.install "completions/wachat.bash" => "wachat"
