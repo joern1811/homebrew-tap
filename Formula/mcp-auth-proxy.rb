@@ -6,23 +6,23 @@ require_relative "lib/custom_download_strategy"
 class McpAuthProxy < Formula
   desc "Local MCP auth proxy that injects authentication for upstream API targets"
   homepage "https://github.com/joern1811/mcp-auth-proxy"
-  version "1.1.0"
+  version "1.1.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/joern1811/mcp-auth-proxy/releases/download/v1.1.0/mcp-auth-proxy_1.1.0_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "3967dabbc30b50d0939851a67e560e64537afcab2c1a355dfa313ee7369cabf5"
+      url "https://github.com/joern1811/mcp-auth-proxy/releases/download/v1.1.1/mcp-auth-proxy_1.1.1_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "8343da41d82c90e8d00bb681eafa824343356bcc9bd424a18bb3601eeb53f131"
 
-      def install
+      define_method(:install) do
         bin.install "mcp-auth-proxy"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/joern1811/mcp-auth-proxy/releases/download/v1.1.0/mcp-auth-proxy_1.1.0_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "28408e5d3655a067cf9cb89e58c7af057016bb96043ae230509ff127d50f12d6"
+      url "https://github.com/joern1811/mcp-auth-proxy/releases/download/v1.1.1/mcp-auth-proxy_1.1.1_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "c30f83ee746099efe40790d312ca06c2a903751e591fe4929c2ea2da9d460653"
 
-      def install
+      define_method(:install) do
         bin.install "mcp-auth-proxy"
       end
     end
@@ -30,16 +30,16 @@ class McpAuthProxy < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/joern1811/mcp-auth-proxy/releases/download/v1.1.0/mcp-auth-proxy_1.1.0_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "6f0e6d36cd4cacab60f02e9cac1859b7bfbbfa8f889e390a5d651d7032d0d77d"
-      def install
+      url "https://github.com/joern1811/mcp-auth-proxy/releases/download/v1.1.1/mcp-auth-proxy_1.1.1_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "f142f756d5635b10ea9651e59f0652da625815d0ce59a57ab27e3018849acb34"
+      define_method(:install) do
         bin.install "mcp-auth-proxy"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/joern1811/mcp-auth-proxy/releases/download/v1.1.0/mcp-auth-proxy_1.1.0_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "df72d18a436ecee1778ebe7dd90c011b7748b8e26bc4142dedd6038b7e77f790"
-      def install
+      url "https://github.com/joern1811/mcp-auth-proxy/releases/download/v1.1.1/mcp-auth-proxy_1.1.1_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "d66a78ce77f3ea6fe793b2ad323d6d286d12dc1a1c91599c340da3c27b53cadc"
+      define_method(:install) do
         bin.install "mcp-auth-proxy"
       end
     end
