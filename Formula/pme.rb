@@ -6,41 +6,65 @@ require_relative "lib/custom_download_strategy"
 class Pme < Formula
   desc "pme — Personal Management Extensions CLI"
   homepage "https://github.com/joern1811/pme"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/joern1811/pme/releases/download/v0.1.0/pme_0.1.0_macos_x86_64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "f199cddb0e0b66b4ee5ede4f033c3dbfa095e3024b1d542d6eab94a0266402ac"
+      url "https://github.com/joern1811/pme/releases/download/v0.1.1/pme_0.1.1_macos_x86_64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "e6cd02901a6c317cf6dbf22a97ded3f7434e2c8828f51414376567b9aff5239c"
 
       define_method(:install) do
         bin.install "pme"
+        bash_output = Utils.safe_popen_read(bin/"pme", "completion", "bash")
+        (bash_completion/"pme").write bash_output
+        zsh_output = Utils.safe_popen_read(bin/"pme", "completion", "zsh")
+        (zsh_completion/"_pme").write zsh_output
+        fish_output = Utils.safe_popen_read(bin/"pme", "completion", "fish")
+        (fish_completion/"pme.fish").write fish_output
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/joern1811/pme/releases/download/v0.1.0/pme_0.1.0_macos_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "9530cd26ad632758a013c574e8692bb10bb514fd3de4479a7ebbe01025a7320a"
+      url "https://github.com/joern1811/pme/releases/download/v0.1.1/pme_0.1.1_macos_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "221b5e4225b4ba22069d76f83671300a26810ba04b89ff80ce33dcf080eac572"
 
       define_method(:install) do
         bin.install "pme"
+        bash_output = Utils.safe_popen_read(bin/"pme", "completion", "bash")
+        (bash_completion/"pme").write bash_output
+        zsh_output = Utils.safe_popen_read(bin/"pme", "completion", "zsh")
+        (zsh_completion/"_pme").write zsh_output
+        fish_output = Utils.safe_popen_read(bin/"pme", "completion", "fish")
+        (fish_completion/"pme.fish").write fish_output
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/joern1811/pme/releases/download/v0.1.0/pme_0.1.0_linux_x86_64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "37abc87590144cf0a2efc429b93fdf4ef8e44d5e8f3c7d264ddedac469fc9f69"
+      url "https://github.com/joern1811/pme/releases/download/v0.1.1/pme_0.1.1_linux_x86_64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "83ae9a4b3b917e6bce39de8597ea0ed7254502e39961c8a6ac26432a66a7291e"
       define_method(:install) do
         bin.install "pme"
+        bash_output = Utils.safe_popen_read(bin/"pme", "completion", "bash")
+        (bash_completion/"pme").write bash_output
+        zsh_output = Utils.safe_popen_read(bin/"pme", "completion", "zsh")
+        (zsh_completion/"_pme").write zsh_output
+        fish_output = Utils.safe_popen_read(bin/"pme", "completion", "fish")
+        (fish_completion/"pme.fish").write fish_output
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/joern1811/pme/releases/download/v0.1.0/pme_0.1.0_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "0556741beb3a9ee7d953acfad67f2365b9697818edc4f6fde3937f9289426730"
+      url "https://github.com/joern1811/pme/releases/download/v0.1.1/pme_0.1.1_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "25e8aec3c497b1171dc1fb37ff7df44fdd3ff3f33543de410efac60ea9f1089f"
       define_method(:install) do
         bin.install "pme"
+        bash_output = Utils.safe_popen_read(bin/"pme", "completion", "bash")
+        (bash_completion/"pme").write bash_output
+        zsh_output = Utils.safe_popen_read(bin/"pme", "completion", "zsh")
+        (zsh_completion/"_pme").write zsh_output
+        fish_output = Utils.safe_popen_read(bin/"pme", "completion", "fish")
+        (fish_completion/"pme.fish").write fish_output
       end
     end
   end
