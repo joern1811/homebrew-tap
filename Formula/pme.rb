@@ -6,13 +6,13 @@ require_relative "lib/custom_download_strategy"
 class Pme < Formula
   desc "pme — Personal Management Extensions CLI"
   homepage "https://github.com/joern1811/pme"
-  version "0.1.1"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/joern1811/pme/releases/download/v0.1.1/pme_0.1.1_macos_x86_64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "e6cd02901a6c317cf6dbf22a97ded3f7434e2c8828f51414376567b9aff5239c"
+      url "https://github.com/joern1811/pme/releases/download/v0.2.0/pme_0.2.0_macos_x86_64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "3c4c018d956cf2d74d17f69d4394c6be81b539e7e6b765364e35bf3fa9cd233c"
 
       define_method(:install) do
         bin.install "pme"
@@ -25,8 +25,8 @@ class Pme < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/joern1811/pme/releases/download/v0.1.1/pme_0.1.1_macos_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "221b5e4225b4ba22069d76f83671300a26810ba04b89ff80ce33dcf080eac572"
+      url "https://github.com/joern1811/pme/releases/download/v0.2.0/pme_0.2.0_macos_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "709f23bacb5a9a9deb2d9e2ca5b5d4eb4cfcf7bfdb1ca67e420b2b5a5592a453"
 
       define_method(:install) do
         bin.install "pme"
@@ -42,8 +42,8 @@ class Pme < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/joern1811/pme/releases/download/v0.1.1/pme_0.1.1_linux_x86_64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "83ae9a4b3b917e6bce39de8597ea0ed7254502e39961c8a6ac26432a66a7291e"
+      url "https://github.com/joern1811/pme/releases/download/v0.2.0/pme_0.2.0_linux_x86_64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "253441c66088c36c6fdb55af9825e8196de53642cdcce98a20ba21eaa5abba05"
       define_method(:install) do
         bin.install "pme"
         bash_output = Utils.safe_popen_read(bin/"pme", "completion", "bash")
@@ -55,8 +55,8 @@ class Pme < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/joern1811/pme/releases/download/v0.1.1/pme_0.1.1_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "25e8aec3c497b1171dc1fb37ff7df44fdd3ff3f33543de410efac60ea9f1089f"
+      url "https://github.com/joern1811/pme/releases/download/v0.2.0/pme_0.2.0_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "8f15a6991d00037b240cc8c9aaf5b51082f590b79ee20fbc73278cda447f5d2b"
       define_method(:install) do
         bin.install "pme"
         bash_output = Utils.safe_popen_read(bin/"pme", "completion", "bash")
